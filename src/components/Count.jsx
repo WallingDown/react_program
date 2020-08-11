@@ -15,6 +15,7 @@ export default class Count extends Component {
         this.setState({count:count + value *1})
     }
 
+    // 减
     decrement = () =>{
          // 1、获取用户输入
          const {value} = this.refs.selectedNumber
@@ -24,6 +25,7 @@ export default class Count extends Component {
          this.setState({count:count - value *1})
     }
 
+    // 奇数加
     incrementIfOdd = () =>{
         if (this.state.count % 2 !== 0) {
               // 1、获取用户输入
@@ -35,6 +37,7 @@ export default class Count extends Component {
         }
     }
 
+    // 等等再加
     incrementWait = () =>{
         setTimeout(()=>{
              // 1、获取用户输入
