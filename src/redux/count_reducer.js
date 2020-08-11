@@ -17,4 +17,5 @@ function countReducer(preState=initState,action){
             return preState
     }
 }
-
+// 暴露出去
+export default countReducer

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import store from '../redux/store'
 
 export default class Count extends Component {
     state = {
@@ -14,6 +15,7 @@ export default class Count extends Component {
         // const {count} = this.state
         // 3、执行后，更新状态
         // this.setState({count:count + value *1})
+        store.dispatch({type:'increment',data:value*1})
     }
 
     // 减
@@ -24,6 +26,7 @@ export default class Count extends Component {
         //  const {count} = this.state
          // 3、执行后，更新状态
         //  this.setState({count:count - value *1})
+        store.dispatch({type:'decrement',data:value*1})
     }
 
     // 奇数加
@@ -35,6 +38,7 @@ export default class Count extends Component {
                 // const {count} = this.state
                 // 3、执行后，更新状态
                 // this.setState({count:count + value *1})
+                store.dispatch({type:'increment',data:value*1})
         // }
     }
 
@@ -47,13 +51,14 @@ export default class Count extends Component {
             //  const {count} = this.state
              // 3、执行后，更新状态
             //  this.setState({count:count + value *1})
+            store.dispatch({type:'increment',data:value*1})
         },500)
     }
 
     render() {
         return (
             <div>
-                <h1>{this.state.name}当前的和为:xxx</h1>
+                <h1>{this.state.name}当前的和为:{store.getState()}</h1>
                 <select ref="selectedNumber">
                     <option value="1">1</option>
                     <option value="2">2</option>
