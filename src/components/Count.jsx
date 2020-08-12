@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {incrementAction,decreateAction,incrementWaitAction} from '../redux/count_action'
  
 export default class Count extends Component {
     state = {
@@ -15,7 +14,7 @@ export default class Count extends Component {
         // const {count} = this.state
         // 3、执行后，更新状态
         // this.setState({count:count + value *1})
-        this.props.store.dispatch(incrementAction(value*1))
+        this.props.increment(value*1)
     }
 
     // 减
@@ -26,19 +25,19 @@ export default class Count extends Component {
         //  const {count} = this.state
          // 3、执行后，更新状态
         //  this.setState({count:count - value *1})
-        this.props.store.dispatch(decreateAction(value*1))
+        this.props.decrement(value*1)
     }
 
     // 奇数加
     incrementIfOdd = () =>{
-        if (this.props.store.getState() % 2 !== 0) {
+        if (this.props.count % 2 !== 0) {
               // 1、获取用户输入
                 const {value} = this.refs.selectedNumber
                 // 2、获取原状态
                 // const {count} = this.state
                 // 3、执行后，更新状态
                 // this.setState({count:count + value *1})
-                this.props.store.dispatch(incrementAction(value*1))
+                this.props.increment(value*1)
         }
     }
 
@@ -50,13 +49,13 @@ export default class Count extends Component {
             //  const {count} = this.state
              // 3、执行后，更新状态
             //  this.setState({count:count + value *1})
-            this.props.store.dispatch(incrementWaitAction(value*1))
+            this.props.incrementWait(value*1)
     }
 
     render() {
         return (
-            <div>
-                <h1>{this.state.name}当前的和为:{this.props.store.getState()}</h1>
+            <div style={{marginLeft:'500px'}}>
+                <h1>{this.state.name}当前的和为:{this.props.count}</h1>
                 <select ref="selectedNumber">
                     <option value="1">1</option>
                     <option value="2">2</option>

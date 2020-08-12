@@ -1,7 +1,7 @@
 // 为count服务的reducer
 import {INCREMENT,DECREMENT} from './constant'
 
-const initState = 0
+const initState = 100
 /**
  * preState用于加工Count组件的状态
  * @param {*} preState 
