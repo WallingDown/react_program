@@ -1,6 +1,6 @@
 // 此文件是为count服务的reducer，————————reducer中最好不要写业务逻辑
 
-import {INCREMENT,DECREMENT} from './constant'
+import {INCREMENT,DECREMENT} from '../constant'
 
 const initState = 100
 /**

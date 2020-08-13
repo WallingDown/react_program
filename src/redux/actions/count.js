@@ -7,7 +7,7 @@
 
 
 
-import {INCREMENT,DECREMENT} from './constant'
+import {INCREMENT,DECREMENT} from '../constant'
 // 1、创建加的action
 export const incrementAction = number => ({type:INCREMENT,data:number})
 ///2、创建减的action
