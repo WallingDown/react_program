@@ -2,10 +2,19 @@
 import React from 'react';
 // 引入react-dom
 import ReactDOM from 'react-dom';
+// 引入Store
+import store from './redux/store'
+//引入Provider，给所有App的子组件提供：store
+import {Provider} from 'react-redux'
 // 引入App
 import App from './App';
 
 
-ReactDOM.render(<App/>,document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById('root')
+);
 
 
