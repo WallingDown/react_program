@@ -9,7 +9,18 @@ import {
     incrementWaitAction
 } from '../redux/actions/count'
 
-
+@connect(
+    // 映射状态
+   state => ({ 
+       count: state.count,
+       persons:state.persons
+   }),
+   {
+       increment: incrementAction,
+       decrement: decreateAction,
+       incrementWait: incrementWaitAction
+   }
+)
  // 定义Count的UI组件
 class Count extends Component {
     state = {
@@ -85,15 +96,6 @@ class Count extends Component {
 
 
 // 暴露connect()()生成的容器组件
-export default connect(
-     // 映射状态
-    state => ({ 
-        count: state.count,
-        persons:state.persons
-    }),
-    {
-        increment: incrementAction,
-        decrement: decreateAction,
-        incrementWait: incrementWaitAction
-    }
-)(Count) 
+
+export default Count
+
